@@ -7,12 +7,15 @@ import java.util.List;
 import java.util.Scanner;
 
 import ro.ase.cts.clase.Angajat;
+import ro.ase.cts.clase.Aplicant;
 
-public class AngajatReader {
-	public static List<Angajat> readAngajati(String file) throws FileNotFoundException {
+public class AngajatReader implements AplicantReader{
+	
+	@Override
+	public List<Aplicant> readAplicant(String file) throws FileNotFoundException {
 		Scanner input2 = new Scanner(new File(file));
 		input2.useDelimiter(",");
-		List<Angajat> angajati = new ArrayList<Angajat>();
+		List<Aplicant> angajati = new ArrayList<Aplicant>();
 
 		while (input2.hasNext()) {
 			String nume = input2.next();
@@ -32,5 +35,7 @@ public class AngajatReader {
 		return angajati;
 	}
 
+	
+
+
 }
-//metoda primeste pointerul this, functia nu 
