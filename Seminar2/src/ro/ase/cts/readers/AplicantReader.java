@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Scanner;
 
 import ro.ase.cts.clase.Aplicant;
-import ro.ase.cts.clase.Elev;
 
 public abstract class AplicantReader {
 	
