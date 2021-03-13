@@ -9,26 +9,27 @@ import java.util.Scanner;
 import ro.ase.cts.clase.Aplicant;
 import ro.ase.cts.clase.Elev;
 
-public class ElevReader implements AplicantReader {
+public class ElevReader extends AplicantReader {
+	public ElevReader(String fileName) {
+		super(fileName);
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
-	public List<Aplicant> readAplicant(String file)  throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(file));
+	
+	public List<Aplicant> readAplicant()  throws FileNotFoundException {
+		Scanner input2 = new Scanner(new File(super.fileName));
 		input2.useDelimiter(",|\n");
 		List<Aplicant> elevi = new ArrayList<Aplicant>();
 
 		while (input2.hasNext()) {
-			String nume = input2.next();
-			String prenume = input2.next();
-			int varsta = input2.nextInt();
-			int punctaj = input2.nextInt();
-			int nr = input2.nextInt();
-			String[] vect = new String[5];
-			for (int i = 0; i < nr; i++)
-				vect[i] = input2.next();
+			Elev elev=new Elev();
+			super.readSingleAplicant(input2, elev);
 			int clasa = input2.nextInt();
+			elev.setClasa(clasa);
 			String tutore = input2.next();
-			Elev e = new Elev(nume, prenume, varsta, punctaj, nr, vect, clasa, tutore);
-			elevi.add(e);
+			elev.setTutore(tutore);
+			elevi.add(elev);
 		}
 
 		input2.close();
