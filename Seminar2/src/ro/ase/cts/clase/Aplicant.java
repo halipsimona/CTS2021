@@ -7,8 +7,8 @@ public abstract class Aplicant{
 	protected String prenume;
 	protected int varsta;
 	protected int punctaj;
-	protected int nr_proiecte;
-	protected String[] denumireProiect;
+	protected int numar_proiecte;
+	protected String[] denumiri_proiecte;
 	protected float suma_finantare;
 	
 	public String getNume() {
@@ -47,34 +47,36 @@ public abstract class Aplicant{
 	
 	@Override
 	public String toString() {
-		return "Aplicant [nume=" + nume + ", prenume=" + prenume + ", varsta=" + varsta + ", punctaj=" + punctaj
-				+ ", nr_proiecte=" + nr_proiecte + ", denumireProiect=" + Arrays.toString(denumireProiect)
-				+ ", suma_finantare=" + suma_finantare + "]";
+		StringBuilder stringBuilder=new StringBuilder();
+		stringBuilder.append("Aplicant [nume=").append(nume).append(", prenume=").append(prenume).append(", varsta=")
+		.append(varsta).append(", punctaj=").append(punctaj).append(", numar_proiecte=").append(numar_proiecte).append(", denumiri_proiecte=").append(Arrays.toString(denumiri_proiecte))
+		.append(", suma_finantare=").append(suma_finantare).append( "]");
+		return stringBuilder.toString();
 	}
 	public Aplicant() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Aplicant(String nume, String prenume, int varsta, int punctaj, int nr_proiecte, String[] denumireProiect) {
+	public Aplicant(String nume, String prenume, int varsta, int punctaj, int numar_proiecte, String[] denumiri_proiect) {
 		super();
 		this.nume = nume;
 		this.prenume = prenume;
 		this.varsta = varsta;
 		this.punctaj = punctaj;
-		this.nr_proiecte = nr_proiecte;
-		this.denumireProiect = denumireProiect;
+		this.numar_proiecte = numar_proiecte;
+		this.denumiri_proiecte = denumiri_proiect;
 	}
-	public int getNr_proiecte() {
-		return nr_proiecte;
+	public int getNumarProiecte() {
+		return numar_proiecte;
 	}
 	
 	public String[] getDenumiriProiecte() {
-		return denumireProiect;
+		return denumiri_proiecte;
 	}
-	public void setDenumiriProiecte(String[] denumireProiect, int nr_proiecte) {
+	public void setDenumiriProiecte(String[] denumiri_proiect, int numar_proiecte) {
 		
-		this.denumireProiect = denumireProiect;
-		this.nr_proiecte = nr_proiecte;
+		this.denumiri_proiecte = denumiri_proiect;
+		this.numar_proiecte = numar_proiecte;
 	}
 	public abstract float get_Suma_finantare();
 	

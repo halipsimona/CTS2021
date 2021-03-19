@@ -18,20 +18,20 @@ public class AngajatReader extends AplicantReader{
 
 	@Override
 	public List<Aplicant> readAplicant() throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(super.fileName));
-		input2.useDelimiter(",");
+		Scanner input = new Scanner(new File(super.fileName));
+		input.useDelimiter(",");
 		List<Aplicant> angajati = new ArrayList<Aplicant>();
 
-		while (input2.hasNext()) {
-			Angajat a=new Angajat();
-			super.readSingleAplicant(input2, a);
-			int salariu = input2.nextInt();
-			a.setSalariu(salariu);
-			String ocupatie = input2.next();
-			a.setOcupatie(ocupatie);
-			angajati.add(a);
+		while (input.hasNext()) {
+			Angajat angajat=new Angajat();
+			super.readSingleAplicant(input, angajat);
+			int salariu = input.nextInt();
+			angajat.setSalariu(salariu);
+			String ocupatie = input.next();
+			angajat.setOcupatie(ocupatie);
+			angajati.add(angajat);
 		}
-		input2.close();
+		input.close();
 		return angajati;
 	}
 
