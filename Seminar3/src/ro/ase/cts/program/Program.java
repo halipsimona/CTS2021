@@ -1,5 +1,6 @@
 package ro.ase.cts.program;
 
+import ro.ase.cts.clase.Hamster;
 import ro.ase.cts.clase.Parlament;
 import ro.ase.cts.clase.ParlamentLazy;
 
@@ -21,6 +22,14 @@ public class Program {
 		
 		System.out.println(parlamentLazy1.toString());
 		System.out.println(parlamentLazy2.toString());
+		
+		
+		Hamster hamster1=Hamster.getInstance("Bob","chinezesc",3,1250);
+		Hamster hamster2=Hamster.getInstance("Bob2","pitic",6,1950);
+		
+		System.out.println(hamster1.toString());
+		System.out.println(hamster2.toString());
+		
 
 	}
 
