@@ -1,11 +1,12 @@
-package ro.ase.cts.program;
+package ro.ase.cts.reteta.program;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import ro.ase.cts.clase.Reteta;
+import ro.ase.cts.reteta.clase.Reteta;
 
 public class Program {
+
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -18,7 +19,9 @@ public class Program {
 		Reteta reteta1=new Reteta(listaDenumiriSolutii,listaCantitati);
 		Reteta reteta2=(Reteta) reteta1.copiaza();
 		System.out.print(reteta1);
-		System.out.print(reteta2);
+		System.out.println(reteta2);
+		
+		
 	}
 
 }
