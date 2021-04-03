@@ -9,15 +9,11 @@ public abstract class Jucator {
 		this.nume = nume;
 		this.numar = numar;
 	}
-	public String getNume() {
-		return nume;
-	}
+
 	public void setNume(String nume) {
 		this.nume = nume;
 	}
-	public int getNumar() {
-		return numar;
-	}
+
 	public void setNumar(int numar) {
 		this.numar = numar;
 	}
